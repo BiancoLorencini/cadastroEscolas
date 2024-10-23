@@ -1,0 +1,196 @@
+:root {
+  --cor-azul: #3498db; 
+  --cor-verde: #2ecc71;
+  --cor-texto: #333333;
+}
+
+
+.mainContainer {
+  background-image: url('./assets/img/teste02.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  animation: fadeIn 1s ease;
+}
+
+.header {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: center;
+  color: var(--cor-azul);
+  padding: 1rem;
+  border-radius: 0 10px 10px 0;
+  border-bottom: 2px solid var(--cor-azul);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.123);
+  background-color: rgba(255, 255, 255, 0.384);
+  animation: fadeInLeft 1s ease;
+}
+
+.sectionLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+  border-bottom: 2px solid var(--cor-azul);
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.123);
+  width: 25%;
+  height: 50%; 
+  font-size: clamp(1.5rem); ;
+  background-color: rgba(255, 255, 255, 0.384);
+  animation: fadeInBottom 1s ease;
+}
+
+.inputButtonContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sectionLogin button {
+  background-color: var(--cor-azul);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  cursor: pointer;
+  width: 50%;
+  will-change: transform;
+  transition: all 0.5s ease;
+}
+
+.sectionLogin button:hover {
+  will-change: transform;
+  transform: scale(1.1); 
+  transition: all 0.5s ease;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.123);
+}
+
+.sectionLogin button:active {
+  background-color: var(--cor-verde);
+}
+
+.inputContainer label {
+  color: var(--cor-azul);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.inputContainer input { 
+  border-bottom: 1px solid var(--cor-azul);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.123);
+  border-radius: 0 10px 10px 10px;
+  padding: 0.5rem;
+  width: 100%;
+  height: auto;
+  color: var(--cor-texto);
+}
+
+.sectionLogin h2 {
+  color: var(--cor-azul);
+}
+
+.popUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  color: var(--cor-azul);
+  padding: 1rem;
+  border-radius: 10px;
+  border-bottom: 2px solid var(--cor-azul);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.123);
+  gap: 1rem;
+  animation: fadeInRight 1s ease;
+}
+
+.popUp button {
+  background-color: var(--cor-azul);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  cursor: pointer;
+  width: 100px;
+}
+
+.popUp button:active {
+  background-color: var(--cor-verde);
+}
+
+.fadeInBottom {
+  animation: fadeOutBottom 1s ease;
+  display: none;
+}
+
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutBottom {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+
