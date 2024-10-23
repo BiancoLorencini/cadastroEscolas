@@ -13,7 +13,7 @@ function App() {
   const [cadastroPassword, setCadastroPassword] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
+
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -30,7 +30,6 @@ function App() {
       }
     } catch (error) {
       console.error('Erro ao buscar usuários:', error);
-      setError('Erro ao realizar login');
     }
   };
 
@@ -76,18 +75,20 @@ function App() {
       {popUp && (
         <div className={style.popUp}>
           <h2>Cadastre-se</h2>
-          <div className={style.inputContainer}>
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" value={cadastroEmail} onChange={(e) => setCadastroEmail(e.target.value)} />
-          </div>
-          <div className={style.inputContainer}>
-            <label htmlFor="password">Senha</label>
-            <input type="password" id="password" value={cadastroPassword} onChange={(e) => setCadastroPassword(e.target.value)} />
-          </div>
-          <div className={style.inputButtonContainer}>
-            <button onClick={cadastrar}>Voltar</button>
-            <button onClick={handleCadastrar}  >Cadastrar</button>
-          </div>
+          <form className={style.cadastroContainerPopUp}    onSubmit={handleCadastrar}>
+            <div className={style.inputContainer}>
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" value={cadastroEmail} onChange={(e) => setCadastroEmail(e.target.value)} required />
+            </div>
+            <div className={style.inputContainer}>
+              <label htmlFor="password">Senha</label>
+              <input type="password" id="password" value={cadastroPassword} onChange={(e) => setCadastroPassword(e.target.value)} required />
+            </div>
+            <div className={style.inputButtonContainer}>
+              <button onClick={cadastrar}>Voltar</button>
+              <button type='submit' >Cadastrar</button>
+            </div>
+          </form>
         </div>
       )}
 

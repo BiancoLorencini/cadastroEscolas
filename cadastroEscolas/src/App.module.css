@@ -138,6 +138,16 @@
   display: none;
 }
 
+.cadastroContainerPopUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: var(--cor-azul);
+  gap: 1rem;
+}
+
 
 @keyframes fadeInRight {
   0% {
