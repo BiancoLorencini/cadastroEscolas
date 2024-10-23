@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'
-import Escola from '../pages/listagemEscola/escola'
+import Escola  from '../pages/listagemEscola/escola.jsx'
 import App from '../App'
 
 

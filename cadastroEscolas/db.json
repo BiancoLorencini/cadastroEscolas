@@ -16,46 +16,9 @@
       ]
     },
     {
-      "id": "2093",
-      "nome": "Colégio Estadual Presidente Bernardes",
-      "endereco": "rua: Fileuterpe",
-      "turmas": [
-        {
-          "id": 1,
-          "nome": "turma da manhã"
-        }
-      ]
-    },
-    {
-      "id": "cb47",
+      "id": "8717",
       "nome": "Escola Sebastião Branco",
       "endereco": "rua: Fileuterpe",
-      "turmas": [
-        {
-          "id": 1,
-          "nome": "1º ano / tarde"
-        },
-        {
-          "id": 2,
-          "nome": "1º ano / noite"
-        }
-      ]
-    },
-    {
-      "id": "b58b",
-      "nome": "Escola Sebastião Branco 2",
-      "endereco": "av: Bernardo Teste",
-      "turmas": [
-        {
-          "id": 1,
-          "nome": "1º ano / manhã"
-        }
-      ]
-    },
-    {
-      "id": "4e70",
-      "nome": "Escola Sebastião Branco 3",
-      "endereco": "rua: Fileuterpe 1111",
       "turmas": [
         {
           "id": 1,

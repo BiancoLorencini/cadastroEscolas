@@ -3,7 +3,7 @@ import axios from 'axios';
 import style from '../../pages/listagemEscola/escola.module.css';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import lixo from '../../assets/img/lixo.svg'
 import FormCadastroEscola from '../../components/formCadastroEscola/formCadastroEscola';
 import FormCadastroTurma from '../../components/formCadastroTurma/formaCadastroTurma';
 import Popup from '../../components/popUp/popUp';
@@ -63,6 +63,17 @@ const Escola = () => {
     }
   };
 
+  const handleDeleteEscola = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3001/escolas/${id}`);
+      setEscolas(escolas.filter((escola) => escola.id !== id));
+      toast.success('Escola excluída com sucesso!');
+    } catch (error) {
+      console.error('Erro ao excluir escola:', error);
+      toast.error('Erro ao excluir escola');
+    }
+  };
+
   return (
     <>
       <div className={style.escolaContainer}>
@@ -88,6 +99,7 @@ const Escola = () => {
                       ))}
                     </ul>
                   </div>
+                  <button><img onClick={() => handleDeleteEscola(escola.id)} className={style.lixo} src={lixo} alt="lixeira" /></button>
                 </div>
               </div>
             ))
