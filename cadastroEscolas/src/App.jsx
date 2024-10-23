@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import style from './App.module.css'
 import axios from 'axios'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -18,12 +20,13 @@ function App() {
     try {
       const response = await axios.get('http://localhost:3001/login');
       const users = response.data;
-      const user = users.find(user => user.email === email && user.password === password);
+      const user = users.find(user => user.cadastroEmail === email && user.cadastroPassword === password);
       if (user) {
         console.log('Login bem-sucedido:', user);
         navigate('/escola');
       } else {
-        alert('Email ou senha inválidos');
+        toast.error('Email ou senha inválidos');
+        console.log('Email ou senha inválidos', user);
       }
     } catch (error) {
       console.error('Erro ao buscar usuários:', error);
@@ -37,10 +40,12 @@ function App() {
     try {
       const response = await axios.post('http://localhost:3001/login', novoCadastro)
       console.log(response.data)
+      toast.success('Cadastrado com sucesso!')
       setCadastroEmail('')
       setCadastroPassword('')
     } catch (error) {
       console.error(error)
+      toast.error('Erro ao cadastrar usuário')
     }
     setPopUp(!popUp)
   }
@@ -85,6 +90,8 @@ function App() {
           </div>
         </div>
       )}
+
+      <ToastContainer />
     </div>
   )
     

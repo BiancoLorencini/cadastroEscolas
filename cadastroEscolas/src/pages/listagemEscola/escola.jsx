@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import style from './escola.module.css'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Escola = () => {
   const [escolas, setEscolas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [popUpCadastro, setPopUpCadastro] = useState(false);
+  const [popUpTurma, setPopUpTurma] = useState(false)
+  const [turmas, setTurmas] = useState([]);
+  const [escola, setEscola] = useState({});
+  const [endereco, setEndereco] = useState({});
 
   const fetchEscolas = async () => {
     try {
@@ -17,14 +23,22 @@ const Escola = () => {
     }
   };
 
-  const cadastrarTurma = async (escolaId, turmaId) => {
+  const cadastrarNovaEscola = async (event) => {
+    event.preventDefault();
+    const novaEscola = {
+      nome: escola,
+      endereco: endereco,      
+    };
     try {
-      await axios.post(`http://localhost:3001/escolas/${escolaId}/turmas/${turmaId}`);
-      fetchEscolas();
+      const response = await axios.post('http://localhost:3001/escolas', novaEscola);
+      setEscolas([...escolas, response.data]);
+      setPopUpCadastro(false);
+      toast.success('Escola cadastrada com sucesso!');
     } catch (error) {
-      console.error('Erro ao cadastrar turma:', error);
+      console.error('Erro ao cadastrar escola:', error);
+      toast.error('Erro ao cadastrar escola');
     }
-  };
+  }
 
   useEffect(() => {
     fetchEscolas();
@@ -36,7 +50,7 @@ const Escola = () => {
 
 
   if (loading) {
-    return <p>Carregando...</p>; // Exibe uma mensagem de carregamento enquanto os dados são carregados
+    return <p>Carregando...</p>; 
   }
 
   return (
@@ -56,9 +70,9 @@ const Escola = () => {
               <div className={style.escolaInfo} >
               <h4>Turmas:</h4>
                 <ul>
-                  {escola.turmas.map((turma) => (
-                    <li key={turma.id}>{turma.nome}</li>
-                  ))}
+                {escola.turmas && escola.turmas.map((turma) => (
+                  <li key={turma.id}>{turma.nome}</li>
+                ))}
                 </ul>
               </div>
               <hr />
@@ -69,30 +83,20 @@ const Escola = () => {
       <div className={style.escolaButtons}>
         <button onClick={() => window.history.back()}>Voltar</button>
         <button onClick={openPopUp}>Cadastrar escola</button>
+        <button >Cadastrar turma</button>
       </div>
-
       {popUpCadastro && (
         <div className={style.escolaPopUp}>
           <div className={style.escolaPopUpContainer}>
             <h2>Cadastro de escola</h2>
-            <form>
+            <form onSubmit={cadastrarNovaEscola}>
               <div className={style.inputContainer}>
-                <label htmlFor="nome">Nome:</label>
-                <input type="text" id="nome" />
+                <label htmlFor="nome">Nome da Escola:</label>
+                <input type="text" id="nome" onChange={(event) => setEscola(event.target.value)} required />
               </div>
               <div className={style.inputContainer}>
-                <label htmlFor="endereco">Endereço:</label>
-                <input type="text" id="endereco" />
-              </div>
-              <div className={style.inputContainer}>
-                <label htmlFor="turmas">Turmas:</label>
-                <select id="turmas">
-                  <option value="">Selecione uma turma</option>
-                  <option value="1">1º Ano</option>
-                  <option value="2">2º Ano</option>
-                  <option value="3">3º Ano</option>
-                  <option value="4">4º Ano</option>
-                </select>
+                <label htmlFor="endereco">Endereço da Escola:</label>
+                <input type="text" id="endereco" onChange={(event) => setEndereco(event.target.value)}  required />
               </div>
               <div className={style.buttonContainer}>
                 <button type="button" onClick={openPopUp}>Fechar</button>
@@ -102,6 +106,7 @@ const Escola = () => {
           </div>
         </div>
       )}
+      <ToastContainer />
     </div>
     </>
   )

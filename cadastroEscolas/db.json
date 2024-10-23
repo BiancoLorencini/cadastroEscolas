@@ -89,6 +89,31 @@
           "nome": "2º Ano B"
         }
       ]
+    },
+    {
+      "id": "1501",
+      "nome": "Bianco Danilo Lorencini",
+      "endereco": "av: Bernardo Teste"
+    },
+    {
+      "id": "b662",
+      "nome": "O Rei Arthur",
+      "endereco": "av: Bernardo Teste aaa"
+    },
+    {
+      "id": "c013",
+      "nome": "Bianco Danilo Lorencini02",
+      "endereco": "av: Bernardo Teste bbb"
+    },
+    {
+      "id": "1518",
+      "nome": "Beatriz",
+      "endereco": "av: beatriz Teste"
+    },
+    {
+      "id": "a769",
+      "nome": "O Rei Arthur03",
+      "endereco": "av: beatriz Teste00"
     }
   ],
   "login": [
@@ -98,24 +123,14 @@
       "cadastroPassword": "adawdawd"
     },
     {
-      "id": "9f45",
-      "cadastroEmail": "adawd@dadaw.com",
-      "cadastroPassword": "dadawdawd"
+      "id": "1643",
+      "cadastroEmail": "admin@email.com",
+      "cadastroPassword": "admin"
     },
     {
-      "id": "1448",
-      "email": "arthlore@gmail.com",
-      "password": "adawdawd"
-    },
-    {
-      "id": "6476",
-      "cadastroEmail": "arthnilo@gmail.com",
-      "cadastroPassword": "12345"
-    },
-    {
-      "id": "f2d8",
-      "cadastroEmail": "arthnilo@gmail.com",
-      "cadastroPassword": "bianco"
+      "id": "e800",
+      "cadastroEmail": "admin2@email.com",
+      "cadastroPassword": "admin2"
     }
   ]
 }
