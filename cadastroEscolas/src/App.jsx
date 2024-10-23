@@ -26,7 +26,7 @@ function App() {
         navigate('/escola');
       } else {
         toast.error('Email ou senha inválidos');
-        console.log('Email ou senha inválidos', user);
+        setPassword('');
       }
     } catch (error) {
       console.error('Erro ao buscar usuários:', error);

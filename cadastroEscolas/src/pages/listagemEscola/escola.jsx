@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import style from './escola.module.css'
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const Escola = () => {
+  const navigate = useNavigate();
   const [escolas, setEscolas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [popUpCadastro, setPopUpCadastro] = useState(false);
   const [popUpTurma, setPopUpTurma] = useState(false)
-  const [turmas, setTurmas] = useState([]);
   const [escola, setEscola] = useState({});
+  const [nomeEscola, setNomeEscola] = useState('');
+  const [nomeTurma, setNomeTurma] = useState('');
   const [endereco, setEndereco] = useState({});
 
   const fetchEscolas = async () => {
@@ -20,6 +23,32 @@ const Escola = () => {
     } catch (error) {
       console.error('Erro ao buscar escolas:', error);
       setLoading(false);
+    }
+  };
+
+  const handleAdicionarTurma = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.get('http://localhost:3001/escolas');
+      const escolas = response.data;
+      const escola = escolas.find((e) => e.nome.toLowerCase() === nomeEscola.toLowerCase());
+      if (escola) {
+        const novaTurma = {
+          id: escola.turmas ? escola.turmas.length + 1 : 1, 
+          nome: nomeTurma
+        };
+        escola.turmas = escola.turmas ? [...escola.turmas, novaTurma] : [novaTurma];
+        await axios.put(`http://localhost:3001/escolas/${escola.id}`, escola);
+        toast.success('Turma adicionada com sucesso!');
+        setNomeTurma('');
+        setPopUpTurma(false);
+      } else {
+        toast.error('Escola não encontrada');
+        setNomeEscola('');
+        setNomeTurma('');
+      }
+    } catch (error) {
+      console.error('Erro ao adicionar turma:', error);
     }
   };
 
@@ -40,12 +69,23 @@ const Escola = () => {
     }
   }
 
+
+
   useEffect(() => {
     fetchEscolas();
   }, [escolas]);
 
   const openPopUp = () => {
     setPopUpCadastro(!popUpCadastro);
+  };
+
+
+  const openPopUpTurma = () => {
+    setPopUpTurma(!popUpTurma);
+  };
+
+  const navigateLogin = () => {
+    navigate('/');
   };
 
 
@@ -57,7 +97,7 @@ const Escola = () => {
     <>
     <div className={style.escolaContainer}>
       <div className={style.escolaListagem}>
-        <h1>Listagem de Escolas</h1>
+        <h1>Listagem de Escolas e Turmas</h1>
         {escolas.length === 0 ? (
           <p>Não há escolas cadastradas.</p>
         ) : (
@@ -81,10 +121,32 @@ const Escola = () => {
         )}
       </div>
       <div className={style.escolaButtons}>
-        <button onClick={() => window.history.back()}>Voltar</button>
-        <button onClick={openPopUp}>Cadastrar escola</button>
-        <button >Cadastrar turma</button>
+        <button onClick={navigateLogin}>Voltar</button>
+        <button onClick={openPopUp}>Cadastrar Escola</button>
+        <button onClick={openPopUpTurma} >Cadastrar Turma</button>
       </div>
+
+      {popUpTurma && (
+        <div className={style.escolaPopUp}>
+          <div className={style.escolaPopUpContainer}>
+            <h2>Cadastro de turma</h2>
+            <form onSubmit={handleAdicionarTurma}>
+              <div className={style.inputContainer}>
+                <label htmlFor="nome">Nome da Escola:</label>
+                <input type="text" id="nome" value={nomeEscola} onChange={(event) => setNomeEscola(event.target.value)} required />
+              </div>
+              <div className={style.inputContainer}>
+                <label htmlFor="nome">Nome da Turma:</label>
+                <input type="text" id="nome" value={nomeTurma} onChange={(event) => setNomeTurma(event.target.value)} required />
+              </div>
+              <div className={style.buttonContainer}>
+                <button type="button" onClick={openPopUpTurma}>Fechar</button>
+                <button type="submit">Cadastrar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
       {popUpCadastro && (
         <div className={style.escolaPopUp}>
           <div className={style.escolaPopUpContainer}>
@@ -92,11 +154,11 @@ const Escola = () => {
             <form onSubmit={cadastrarNovaEscola}>
               <div className={style.inputContainer}>
                 <label htmlFor="nome">Nome da Escola:</label>
-                <input type="text" id="nome" onChange={(event) => setEscola(event.target.value)} required />
+                <input type="text" id="nome" onChange={(event) => setEscola(event.target.value)} required placeholder='Digite o nome da escola' />
               </div>
               <div className={style.inputContainer}>
                 <label htmlFor="endereco">Endereço da Escola:</label>
-                <input type="text" id="endereco" onChange={(event) => setEndereco(event.target.value)}  required />
+                <input type="text" id="endereco" onChange={(event) => setEndereco(event.target.value)} placeholder='Digite o endereço da escola'  required />
               </div>
               <div className={style.buttonContainer}>
                 <button type="button" onClick={openPopUp}>Fechar</button>

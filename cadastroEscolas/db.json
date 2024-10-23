@@ -2,7 +2,7 @@
   "escolas": [
     {
       "id": 1,
-      "nome": "Escola Municipal João Pedro",
+      "nome": "Escola Estadual Edmundo Bittencourt",
       "endereco": "Av. João Pedro",
       "turmas": [
         {
@@ -16,104 +16,15 @@
       ]
     },
     {
-      "id": 2,
-      "nome": "Escola Municipal José Maria",
-      "endereco": "Av. Jose Maria",
+      "id": "2093",
+      "nome": "Colégio Estadual Presidente Bernardes",
+      "endereco": "rua: Fileuterpe",
       "turmas": [
         {
           "id": 1,
-          "nome": "2º Ano A"
-        },
-        {
-          "id": 2,
-          "nome": "2º Ano B"
+          "nome": "turma da manhã"
         }
       ]
-    },
-    {
-      "id": 3,
-      "nome": "Escola Municipal José Antonio",
-      "endereco": "Av. Jose Antonio",
-      "turmas": [
-        {
-          "id": 1,
-          "nome": "1º Ano A"
-        },
-        {
-          "id": 2,
-          "nome": "1º Ano B"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "nome": "Escola Municipal Maria Clara",
-      "endereco": "Av. Maria Clara",
-      "turmas": [
-        {
-          "id": 1,
-          "nome": "2º Ano A"
-        },
-        {
-          "id": 2,
-          "nome": "2º Ano B"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "nome": "Escola Municipal Angela Lara",
-      "endereco": "Av. Angela Lara",
-      "turmas": [
-        {
-          "id": 1,
-          "nome": "2º Ano A"
-        },
-        {
-          "id": 2,
-          "nome": "2º Ano B"
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "nome": "Escola Municipal Arthur Lore",
-      "endereco": "Av. Arthur Lore",
-      "turmas": [
-        {
-          "id": 1,
-          "nome": "2º Ano A"
-        },
-        {
-          "id": 2,
-          "nome": "2º Ano B"
-        }
-      ]
-    },
-    {
-      "id": "1501",
-      "nome": "Bianco Danilo Lorencini",
-      "endereco": "av: Bernardo Teste"
-    },
-    {
-      "id": "b662",
-      "nome": "O Rei Arthur",
-      "endereco": "av: Bernardo Teste aaa"
-    },
-    {
-      "id": "c013",
-      "nome": "Bianco Danilo Lorencini02",
-      "endereco": "av: Bernardo Teste bbb"
-    },
-    {
-      "id": "1518",
-      "nome": "Beatriz",
-      "endereco": "av: beatriz Teste"
-    },
-    {
-      "id": "a769",
-      "nome": "O Rei Arthur03",
-      "endereco": "av: beatriz Teste00"
     }
   ],
   "login": [
@@ -121,16 +32,6 @@
       "id": "e852",
       "cadastroEmail": "arthlore@gmail.com",
       "cadastroPassword": "adawdawd"
-    },
-    {
-      "id": "1643",
-      "cadastroEmail": "admin@email.com",
-      "cadastroPassword": "admin"
-    },
-    {
-      "id": "e800",
-      "cadastroEmail": "admin2@email.com",
-      "cadastroPassword": "admin2"
     }
   ]
 }

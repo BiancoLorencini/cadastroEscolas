@@ -20,9 +20,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width:  20%;
+  width:  30%;
   height: 10%;
-  gap: 0.5rem;
+  gap: 1.5rem;
 }
 
 .escolaButtons button {
@@ -73,6 +73,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.escolaInfo h3, h4 {
+  color: var(--cor-azul);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
 }
 
 .escolaListagem h1 {
