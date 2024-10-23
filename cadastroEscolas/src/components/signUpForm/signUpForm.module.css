@@ -1,0 +1,44 @@
+.cadastroContainerPopUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: var(--cor-azul);
+  gap: 1rem;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  height: 100%;
+}
+
+.inputContainer label {
+  color: var(--cor-azul);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.inputContainer input { 
+  border-bottom: 1px solid var(--cor-azul);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.123);
+  border-radius: 0 10px 10px 10px;
+  padding: 0.5rem;
+  width: 100%;
+  height: auto;
+  color: var(--cor-texto);
+}
+
+.inputButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 90%;
+  height: 100%;
+}

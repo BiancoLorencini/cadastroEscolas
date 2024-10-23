@@ -4,7 +4,6 @@
   --cor-texto: #333333;
 }
 
-
 .mainContainer {
   background-image: url('./assets/img/teste02.jpg');
   background-size: cover;
@@ -76,32 +75,6 @@
   transform: scale(1.1); 
   transition: all 0.5s ease;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.123);
-}
-
-.sectionLogin button:active {
-  background-color: var(--cor-verde);
-}
-
-.inputContainer label {
-  color: var(--cor-azul);
-  font-size: clamp(0.8rem, 1.5vw, 1rem);
-}
-
-.inputContainer input { 
-  border-bottom: 1px solid var(--cor-azul);
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.123);
-  border-radius: 0 10px 10px 10px;
-  padding: 0.5rem;
-  width: 100%;
-  height: auto;
-  color: var(--cor-texto);
-}
-
-.sectionLogin h2 {
-  color: var(--cor-azul);
 }
 
 .popUp {

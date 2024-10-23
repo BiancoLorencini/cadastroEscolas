@@ -1,7 +1,7 @@
 {
   "escolas": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "Escola Estadual Edmundo Bittencourt",
       "endereco": "Av. João Pedro",
       "turmas": [
@@ -32,6 +32,16 @@
       "id": "e852",
       "cadastroEmail": "arthlore@gmail.com",
       "cadastroPassword": "adawdawd"
+    },
+    {
+      "id": "bf66",
+      "cadastroEmail": "arthnilo@gmail.com",
+      "cadastroPassword": "abc123"
+    },
+    {
+      "id": "d337",
+      "cadastroEmail": "bia_lorencini@hotmail.com",
+      "cadastroPassword": "testeA"
     }
   ]
 }
