@@ -68,16 +68,26 @@
 }
 
 .escolaInfo {
-  width: 50%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0.5rem;
 }
 
 .escolaInfo h3, h4 {
   color: var(--cor-azul);
   font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.escolaTurmas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  gap: 0.5rem;
 }
 
 .escolaListagem h1 {
