@@ -1,21 +1,6 @@
 {
   "escolas": [
     {
-      "id": "1",
-      "nome": "Escola Estadual Edmundo Bittencourt",
-      "endereco": "Av. João Pedro",
-      "turmas": [
-        {
-          "id": 1,
-          "nome": "1º Ano A"
-        },
-        {
-          "id": 2,
-          "nome": "1º Ano B"
-        }
-      ]
-    },
-    {
       "id": "8717",
       "nome": "Escola Sebastião Branco",
       "endereco": "rua: Fileuterpe",
@@ -23,6 +8,28 @@
         {
           "id": 1,
           "nome": "1º ano / manhã"
+        }
+      ]
+    },
+    {
+      "id": "efb4",
+      "nome": "Escola Sebastião Branco 3",
+      "endereco": "av: beatriz Teste",
+      "turmas": [
+        {
+          "id": 1,
+          "nome": "1º ano / noite"
+        }
+      ]
+    },
+    {
+      "id": "8f64",
+      "nome": "Colégio Estadual Presidente Bernardes",
+      "endereco": "rua: Fileuterpe 333",
+      "turmas": [
+        {
+          "id": 1,
+          "nome": "1º ano / noite"
         }
       ]
     }
@@ -34,14 +41,9 @@
       "cadastroPassword": "adawdawd"
     },
     {
-      "id": "bf66",
-      "cadastroEmail": "arthnilo@gmail.com",
-      "cadastroPassword": "abc123"
-    },
-    {
-      "id": "d337",
-      "cadastroEmail": "bia_lorencini@hotmail.com",
-      "cadastroPassword": "testeA"
+      "id": "ea4b",
+      "cadastroEmail": "admin@email.com",
+      "cadastroPassword": "admin"
     }
   ]
 }
