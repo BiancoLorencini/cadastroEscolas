@@ -87,10 +87,11 @@ const Escola = () => {
             escolas.map((escola) => (
               <div className={style.escolaLista} key={escola.id}>
                 <div className={style.escolaInfo}>
-                  <div>
+                  <div className={style.escolaNome}>
                     <h3>{escola.nome}</h3>
                     <p>Endereço: {escola.endereco}</p>
                   </div>
+                  <span className={style.spanDivider}></span>
                   <div className={style.escolaTurmas}>
                     <h4>Turmas:</h4>
                     <ul>
